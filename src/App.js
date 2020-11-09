@@ -1,27 +1,27 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const App = () => {
-  const { inputValue, setInputValue } = useState("");
+  const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    setInputValue("");
+  }, []);
 
   if (inputValue) {
-    console.log("test");
+    const url = inputValue.split("=");
   }
-  console.log("rose");
 
   return (
     <div className="App">
       <form>
-        <label>
-          URL:
-          <input type="text" name="name" />
-        </label>
+        <label>URL:</label>
         <input
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
-          type="submit"
+          type="text"
           value={inputValue}
         />
       </form>
