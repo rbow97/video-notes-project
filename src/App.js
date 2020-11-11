@@ -1,3 +1,5 @@
+// API KEY = AIzaSyBSY26NPih4488SoV6fTzWNJo_aJt6TMZk
+
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useEffect } from "react";
@@ -9,7 +11,7 @@ const App = () => {
     setInputValue("");
   }, []);
 
-  if (inputValue) {
+  if (inputValue && inputValue.includes("=")) {
     const url = inputValue.split("=");
   }
 
@@ -25,6 +27,7 @@ const App = () => {
           value={inputValue}
         />
       </form>
+      <div id="player"></div>
       <iframe
         width="560"
         height="315"
