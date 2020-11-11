@@ -1,5 +1,3 @@
-// API KEY = AIzaSyBSY26NPih4488SoV6fTzWNJo_aJt6TMZk
-
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useEffect } from "react";
