@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
@@ -11,6 +12,7 @@ const App = () => {
 
   if (inputValue && inputValue.includes("=")) {
     const url = inputValue.split("=");
+    console.log(inputValue);
   }
 
   return (
