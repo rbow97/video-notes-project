@@ -39,7 +39,6 @@ const Player = () => {
           allowfullscreen
         ></iframe>
       </div>
-      ;
     </div>
   );
 };
