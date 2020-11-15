@@ -1,17 +1,20 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
+  let videoId = "";
+  let url = "";
+  let videoText = " ";
 
   useEffect(() => {
     setInputValue("");
   }, []);
 
   if (inputValue && inputValue.includes("=")) {
-    const url = inputValue.split("=");
-    console.log(inputValue);
+    url = inputValue.split("=");
+    videoId = url[1];
+    videoText = `https://www.youtube.com/embed/${videoId}`;
   }
 
   return (
@@ -25,12 +28,13 @@ const App = () => {
           type="text"
           value={inputValue}
         />
+        <input type="submit" value="Submit"></input>
       </form>
-      <div id="player">
+      <div id={videoId}>
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/h0U2QUGKbSE"
+          src={videoText}
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
